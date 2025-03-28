@@ -8,12 +8,25 @@ body {
     justify-content: center;
 }
 
+@keyframes hoverEffect {
+    0% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up slightly */
+    }
+    100% {
+        transform: translateY(0); /* Return to initial position */
+    }
+}
+
 .main_card {
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
     transform: perspective(2500px);
-    transition: 4s;
+    animation: hoverEffect 3s ease-in-out infinite; /* Apply the hovering animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .front_image {
