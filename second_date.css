@@ -94,26 +94,19 @@ body {
     margin-left: 50px;
     margin-right: 40px;
 }
+@media only screen and (max-width: 480px) {
+    .front_image, .inside_image {
+        width: 250px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 
-@media (max-width: 768px) {
-    .front_image, .inside_image {
-        width: 80%; /* Adjust to fit within the card */
-        margin: 0 auto; /* Center images */
+    .front_of_card, .inside_card {
+        width: 300px;
+        height: 600px;
     }
+
     .front_text, .inside_text {
-        font-size: 16px; /* Reduce text size for readability */
-        padding: 10px; /* Add padding to prevent overlap */
-    }
-    .main_card {
-        width: 100%; /* Ensure the card fits within the viewport */
-        height: auto; /* Allow dynamic height adjustment */
-    }
-}
-  @media (max-width: 600px) {
-    .front_text, .inside_text {
-        font-size: 14px; /* Further reduce text size */
-    }
-    .front_image, .inside_image {
-        width: 70%; /* Scale images further */
+        font-size: 18px;
     }
 }
