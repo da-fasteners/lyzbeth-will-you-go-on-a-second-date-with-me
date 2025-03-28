@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 16px;
+    height: 100vh;
+    background-color: #ff2400 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_card {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+.front_image {
+    width: 400px;
+    margin-right: -50px;
+    margin-left:  -50px;
+    margin-top: 100px;
+    position: relative;
+} 
+
+.inside_image{
+    width:350px;
+    margin-right: -50px;
+    margin-left:  -50px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.main_card.active .front_of_card {
+    transform: rotateY(-160deg);
+}
+.main_card.active .front_text {
+    display: none;
+}
+.front_text, .inside_text{
+    color: #ff2400 ;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.front_of_card {
+    position: relative;
+    overflow: hidden;
+    transform-origin: left;
+    margin: 40px auto;
+    padding: 16px;
+    background-color: #F3F2F4;
+    text-align: center;
+    box-shadow: 0 24px 40px -8px #ff2400 ;
+    width: 450px;
+    height: 800px;
+}
+
+.front_of_card, .inside_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inside_card {
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left;
+    margin: 40px auto;
+    padding: 16px;
+    background-color: #F3F2F4;;
+    text-align: center;
+    box-shadow: 0 24px 40px -8px #ff2400 ;
+    width: 450px;
+    height: 800px;
+    z-index:-1;
+    left:0;
+    top:0;
+
+}
+.main_card audio {
+    display: none;
+}
+
+.main_card:hover .front_img {
+    display: none;
+}
+.inside_card audio {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+    .front_image, .inside_image {
+        width: 80%; /* Adjust to fit within the card */
+        margin: 0 auto; /* Center images */
+    }
+    .front_text, .inside_text {
+        font-size: 16px; /* Reduce text size for readability */
+        padding: 10px; /* Add padding to prevent overlap */
+    }
+    .main_card {
+        width: 100%; /* Ensure the card fits within the viewport */
+        height: auto; /* Allow dynamic height adjustment */
+    }
+}
+  @media (max-width: 600px) {
+    .front_text, .inside_text {
+        font-size: 14px; /* Further reduce text size */
+    }
+    .front_image, .inside_image {
+        width: 70%; /* Scale images further */
+    }
+}

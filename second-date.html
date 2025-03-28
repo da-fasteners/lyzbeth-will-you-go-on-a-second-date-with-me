@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="second_date.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you go on a second date with me?</title>
+</head>
+<body>
+    <div class="main_card" id="card">
+        <div class="front_of_card">
+            <img src="simba-walking.png" class="front_image">
+            <div class="front_text">
+            <h3>I had an amazing time with you so I had to ask ... </h3>
+            </div>    
+        </div>
+        <div class="inside_card">
+            <img src="nala-and-simba.png" class="inside_image">
+            <div>
+                <audio id="cardAudio" controls>
+                    <source src="KAROL G, Jessie Reyez - Ocean (Remix).mp3" type="audio/mp3">
+                  </audio>  
+            </div>
+            <div class="inside_text">
+                <h4>... will you please let me take you out on a second date?</h4>
+                <h3>I had an amazing time with you and I know that there's something special here and I don't want to lose that.</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get references to the card and audio elements
+        const card = document.getElementById('card');
+        const audio = document.getElementById('cardAudio');
+    
+        // Add an event listener for the card click
+        card.addEventListener('click', function () {
+            // Toggle the 'active' class on the card
+            this.classList.toggle('active');
+            
+                   // Check if the card is active (opened)
+        if (this.classList.contains('active')) {
+            audio.currentTime = 5; // Start playback at 5 seconds
+            audio.play(); // Play audio when the card is opened
+        } else {
+            audio.pause(); // Pause audio when the card is closed
+        }
+    });
+
+    </script>
+</body>
+</html>
