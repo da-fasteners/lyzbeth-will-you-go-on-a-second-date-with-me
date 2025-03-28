@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Will you go on a second date with me?</title>
 </head>
 <body>
@@ -28,24 +28,30 @@
         </div>
     </div>
     <script>
-        // Get references to the card and audio elements
-        const card = document.getElementById('card');
-        const audio = document.getElementById('cardAudio');
-    
-        // Add an event listener for the card click
-        card.addEventListener('click', function () {
-            // Toggle the 'active' class on the card
-            this.classList.toggle('active');
-            
-                   // Check if the card is active (opened)
+       // Get references to the card and audio elements
+    const card = document.getElementById('card');
+    const audio = document.getElementById('cardAudio');
+
+      // Variable to track if the audio has started from 5 seconds
+      let hasStartedFromFiveSeconds = false;
+
+    // Add an event listener for the card click
+    card.addEventListener('click', function () {
+        // Toggle the 'active' class on the card
+        this.classList.toggle('active');
+        
+        // Check if the card is active (opened)
         if (this.classList.contains('active')) {
-            audio.currentTime = 5; // Start playback at 5 seconds
+            // Only set currentTime to 5 seconds on the first opening
+            if (!hasStartedFromFiveSeconds) {
+                audio.currentTime = 5; // Start playback at 5 seconds
+                hasStartedFromFiveSeconds = true; // Mark as started from 5 seconds
+            }
             audio.play(); // Play audio when the card is opened
         } else {
-            audio.pause(); // Pause audio when the card is closed
+            audio.pause(); // Pause audio when the card is closed without resetting playback position
         }
     });
-
     </script>
 </body>
 </html>
